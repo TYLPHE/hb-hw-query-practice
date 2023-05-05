@@ -98,3 +98,8 @@ if __name__ == "__main__":
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     connect_to_db(app)
     print("Connected to DB.")
+    # Find the rating for the movie whose id is 7, from the user whose id is 6.
+    q = Rating.query.filter(Rating.score > 3).all()
+    print('q',q)
+
+
