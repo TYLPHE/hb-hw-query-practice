@@ -29,8 +29,7 @@
     # Looping causes multiple queries
     q2 = Movie.query.join(Rating).filter_by(score = 5).all()
 ```
-
-    After looking at the solution, I learned that Ratings can be filtered by score. Because Ratings are linked to Movie, we can do Rating.movie.title to find the title of the movie.
+After looking at the solution, I learned that Ratings can be filtered by score. Because Ratings are linked to Movie, we can do Rating.movie.title to find the title of the movie.
 ```python
     ratings_of_five = Rating.query.filter_by(score=5).all()
 ```
@@ -39,7 +38,7 @@
     q = Rating.query.join(User, Movie).filter( (User.user_id == 6) & (Movie.movie_id == 7) ).all()
 ```
 
-    After looking at the solution, I learned that Rating already has user_id and movie_id...wow
+After looking at the solution, I learned that Rating already has user_id and movie_id...wow
 ```python
     rating = Rating.query.filter_by(user_id=6, movie_id=7).first()
 ```
